@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -48,6 +47,7 @@ table {
     overflow-x: auto;
 }
 /* End CSS Reset */
+
 
 body {
     margin: 16px 0 0 0;
@@ -493,6 +493,7 @@ tr > td:first-child input {
 
 td button {
     position: sticky;
+    cursor: pointer;
     right: 0;
     background-color: #ffffff;
     z-index: 1;
