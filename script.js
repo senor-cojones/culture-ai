@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rows = document.querySelectorAll('tbody tr');
     const slideOut = document.getElementById('slide-out');
     const closeButton = slideOut.querySelector('.close');
-    const tableWrapper = document.querySelector('.table-wrapper');
+    const content = document.querySelector('#content');
 
     const updateSlideOutContent = (employee, saasApp) => {
         slideOut.querySelector('.details').innerHTML = `
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateSlideOutContent(employee, saasApp);
             slideOut.classList.add('open');
-            tableWrapper.style.width = 'calc(100% - 310px)';
+            content.style.width = 'calc(100% - 400px)';
         });
     });
 
@@ -51,13 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     closeButton.addEventListener('click', () => {
         slideOut.classList.remove('open');
-        tableWrapper.style.width = '100%';
+        content.style.width = '97%';
     });
 
     document.addEventListener('click', event => {
         if (!slideOut.contains(event.target) && !event.target.matches('.view-button')) {
             slideOut.classList.remove('open');
-            tableWrapper.style.width = '100%';
+            content.style.width = '97%';
         }
     });
 });

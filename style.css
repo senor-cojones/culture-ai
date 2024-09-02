@@ -197,6 +197,10 @@ td:last-child {
   right: 0;
 }
 
+td:last-child {
+    background-color: #fff;
+}
+
 tbody > tr:last-child td {
     border-bottom: none;
 }
@@ -468,6 +472,10 @@ button.close {
     color: #0747b3;
 }
 
+#content {
+    transition: width 0.3s ease;
+}
+
 tr > td:first-child {
     padding-right: 8px;
     padding-left: 22px;
@@ -488,7 +496,10 @@ tr > td:first-child input {
 .table-wrapper {
     width: 100%;
     overflow-x: auto;
+    overflow-y: auto;
+    height: 400px;
     position: relative;
+    transition: width 0.3s ease;
 }
 
 td button {
