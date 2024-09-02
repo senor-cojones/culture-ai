@@ -299,7 +299,7 @@ button.close{
     background: none;
     border: none;
     outline: none;
-    cursor: pointer
+    cursor: pointer;
     background: white
 }
 .close img {
