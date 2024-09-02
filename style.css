@@ -230,6 +230,7 @@ a:hover {
 /* Slide-out block below */
 
 #slide-out {
+    display: none;
     width: 500px;
     border-left: 1px solid #dfe1e6;
     height: 100vh;
