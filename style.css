@@ -106,6 +106,9 @@ body {
 }
 
 table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
     text-align: left;
     font-size: 13px;
     line-height: 1;
@@ -125,6 +128,7 @@ th {
     font-weight: 400;
     font-size: 12px;
     width: fit-content;
+    white-space: nowrap;
 }
 
 td {
@@ -132,6 +136,12 @@ td {
     padding: 12px 32px 12px 10px;
     border-bottom: 1px solid #dfe1e6;
     width: fit-content;
+    white-space: nowrap;
+    position: relative;
+}
+
+td:last-child {
+    padding-right: 120px;
 }
 
 tbody > tr:last-child td {
@@ -144,6 +154,13 @@ th:first-child {
 
 th:last-child {
     border-radius: 0 8px 8px 0;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #f9fafd;
 }
 
 table button {
@@ -230,16 +247,23 @@ a:hover {
 /* Slide-out block below */
 
 #slide-out {
-    display: none;
-    width: 500px;
-    border-left: 1px solid #dfe1e6;
-    height: 100vh;
-    box-sizing: border-box;
-    position: relative;
     position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+#slide-out.open {
     right: 0;
-    background: #ffffff;
-    z-index: 1;
+}
+
+#slide-out .details {
+    padding: 16px;
 }
 
 /* circle plugin */
@@ -425,4 +449,20 @@ tr > td:first-child input {
     border-radius: 4px;
     box-sizing: border-box;
     padding: 0;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+}
+
+td button {
+    position: sticky;
+    right: 0;
+    background-color: #ffffff;
+    z-index: 1;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
