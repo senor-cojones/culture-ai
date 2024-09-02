@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div>
                         <span class="dataSource">
-                            <img class="w-100" src="assets/chrome.svg" alt="chrome icon" />
+                            <img class="w-100" src="assets/chrome.svg" alt="Chrome icon" />
                         </span>
                     </div>
                 </div>
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Check if the click is on the row (not on a checkbox or button)
             if (!event.target.matches('input[type="checkbox"]') && !event.target.matches('button')) {
                 const checkbox = this.querySelector('input[type="checkbox"]');
-
                 checkbox.checked = !checkbox.checked;
             }
         });
@@ -48,5 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     closeButton.addEventListener('click', function() {
         slideOut.classList.remove('open');
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!slideOut.contains(event.target) && !event.target.matches('.view-button')) {
+            slideOut.classList.remove('open');
+        }
     });
 });
