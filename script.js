@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const viewButtons = document.querySelectorAll('.view-button');
+    const rows = document.querySelectorAll('tbody tr');
     const slideOut = document.getElementById('slide-out');
     const closeButton = slideOut.querySelector('.close');
 
@@ -9,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const employee = row.querySelector('td:nth-child(2) a').textContent.trim();
             const saasApp = row.querySelector('td:nth-child(4)').textContent.trim();
 
-            // Populate slide-out content
             slideOut.querySelector('.details').innerHTML = `
                 <div class="d-flex border-b">
                     <div class="medium">Employee</div>
@@ -31,8 +31,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
 
-            // Open the slide-out panel
             slideOut.classList.add('open');
+        });
+    });
+
+    rows.forEach(row => {
+        row.addEventListener('click', function(event) {
+            // Check if the click is on the row (not on a checkbox or button)
+            if (!event.target.matches('input[type="checkbox"]') && !event.target.matches('button')) {
+                const checkbox = this.querySelector('input[type="checkbox"]');
+
+                checkbox.checked = !checkbox.checked;
+            }
         });
     });
 
